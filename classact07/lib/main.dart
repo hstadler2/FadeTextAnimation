@@ -71,14 +71,23 @@ class _FadingTextAnimationState extends State<FadingTextAnimation> {
           )
         ],
       ),
-      body: Center(
-        // AnimatedOpacity widget animates the opacity from visible to invisible.
-        child: AnimatedOpacity(
-          opacity: _isVisible ? 1.0 : 0.0,
-          duration: Duration(seconds: 1),
-          child: Text(
-            'Hello, Flutter!',
-            style: TextStyle(fontSize: 24),
+      body: GestureDetector(
+        onHorizontalDragEnd: (details) {
+          // Navigate to the second animation screen when a horizontal swipe is detected.
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SecondAnimationScreen()),
+          );
+        },
+        child: Center(
+          // AnimatedOpacity widget animates the opacity from visible to invisible.
+          child: AnimatedOpacity(
+            opacity: _isVisible ? 1.0 : 0.0,
+            duration: Duration(seconds: 1),
+            child: Text(
+              'Hello, Flutter!',
+              style: TextStyle(fontSize: 24),
+            ),
           ),
         ),
       ),
@@ -86,6 +95,58 @@ class _FadingTextAnimationState extends State<FadingTextAnimation> {
         onPressed: toggleVisibility,
         tooltip: 'Toggle Visibility', // Tooltip for accessibility.
         child: Icon(Icons.play_arrow),
+      ),
+    );
+  }
+}
+
+// Second screen that demonstrates a different fading animation duration.
+class SecondAnimationScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Second Fading Animation')),
+      body: Center(
+        child: FadeInOutText(durationInSeconds: 3),
+      ),
+    );
+  }
+}
+
+// Widget to handle the fading text with a configurable duration.
+class FadeInOutText extends StatefulWidget {
+  final int durationInSeconds;
+
+  FadeInOutText({this.durationInSeconds = 1});
+
+  @override
+  _FadeInOutTextState createState() => _FadeInOutTextState();
+}
+
+class _FadeInOutTextState extends State<FadeInOutText> {
+  bool _isVisible = true;
+
+  @override
+  void initState() {
+    super.initState();
+    // Periodically toggle the visibility to demonstrate the fading effect.
+    Future.delayed(Duration(seconds: widget.durationInSeconds), () {
+      if (mounted) {
+        setState(() {
+          _isVisible = !_isVisible;
+        });
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedOpacity(
+      opacity: _isVisible ? 1.0 : 0.0,
+      duration: Duration(seconds: widget.durationInSeconds),
+      child: Text(
+        'Different Duration!',
+        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
       ),
     );
   }
