@@ -94,19 +94,6 @@ class _FadingTextAnimationState extends State<FadingTextAnimation> {
           ),
         ],
       ),
-<<<<<<< HEAD
-      body: PageView(
-        children: [
-          Center(
-            child: AnimatedOpacity(
-              opacity: _isVisible ? 1.0 : 0.0,
-              duration: Duration(seconds: 1),
-              curve: Curves.easeInOut,
-              child: Text(
-                'Hello, Flutter!',
-                style: TextStyle(fontSize: 24, color: _textColor),
-              ),
-=======
       body: GestureDetector(
         onHorizontalDragEnd: (details) {
           // Navigate to the second animation screen when a horizontal swipe is detected.
@@ -120,24 +107,13 @@ class _FadingTextAnimationState extends State<FadingTextAnimation> {
           child: AnimatedOpacity(
             opacity: _isVisible ? 1.0 : 0.0,
             duration: Duration(seconds: 1),
+            curve: Curves.easeInOut,
             child: Text(
               'Hello, Flutter!',
-              style: TextStyle(fontSize: 24),
->>>>>>> b52ad69cb79781ff104c60ec691c80b55cd2fef1
+              style: TextStyle(fontSize: 24, color: _textColor),
             ),
           ),
-          Center(
-            child: AnimatedOpacity(
-              opacity: _isVisible ? 1.0 : 0.0,
-              duration: Duration(seconds: 2),
-              curve: Curves.fastOutSlowIn,
-              child: Text(
-                'Second Screen',
-                style: TextStyle(fontSize: 24, color: _textColor),
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: toggleVisibility,
@@ -145,9 +121,6 @@ class _FadingTextAnimationState extends State<FadingTextAnimation> {
       ),
     );
   }
-<<<<<<< HEAD
-}
-=======
 }
 
 // Second screen that demonstrates a different fading animation duration.
@@ -201,4 +174,3 @@ class _FadeInOutTextState extends State<FadeInOutText> {
     );
   }
 }
->>>>>>> b52ad69cb79781ff104c60ec691c80b55cd2fef1
