@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/FadeTextAnimation.iml" filepath="$PROJECT_DIR$/.idea/FadeTextAnimation.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/in_classactivity07.iml" filepath="$PROJECT_DIR$/.idea/in_classactivity07.iml" />
+>>>>>>> b52ad69cb79781ff104c60ec691c80b55cd2fef1
     </modules>
   </component>
 </project>

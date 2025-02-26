@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
+=======
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id>Android Lint: Correctness</id>
+          </State>
+          <State>
+            <id>Android Lint: Security</id>
+          </State>
+          <State>
+            <id>CodePlugin DevKit</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>User defined</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+>>>>>>> b52ad69cb79781ff104c60ec691c80b55cd2fef1
   <component name="ProjectRootManager">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
